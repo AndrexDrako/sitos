@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+
+<html lang="it">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <title>Hai Vinto!</title>
+
+  <style>
+
+    body {
+
+      margin: 0;
+
+      font-family: Arial, sans-serif;
+
+      background-color: #ffe600;
+
+      text-align: center;
+
+      color: #1a1a1a;
+
+      overflow: hidden;
+
+      position: relative;
+
+    }
+
+
+
+    .logo {
+
+      margin-top: 30px;
+
+    }
+
+
+
+    .logo img {
+
+      width: 200px;
+
+    }
+
+
+
+    .emoji {
+
+      font-size: 80px;
+
+      margin-top: 30px;
+
+    }
+
+
+
+    .hai-vinto {
+
+      font-size: 48px;
+
+      font-weight: bold;
+
+      color: #e5007d;
+
+      margin: 10px 0 20px;
+
+    }
+
+
+
+    .info {
+
+      font-size: 20px;
+
+      margin: 10px 0;
+
+    }
+
+
+
+    .button {
+
+      display: inline-block;
+
+      margin-top: 30px;
+
+      padding: 15px 30px;
+
+      background-color: #e5007d;
+
+      color: white;
+
+      font-weight: bold;
+
+      font-size: 18px;
+
+      border-radius: 25px;
+
+      text-decoration: none;
+
+    }
+
+
+
+    .button img {
+
+      vertical-align: middle;
+
+      margin-left: 10px;
+
+      width: 20px;
+
+    }
+
+
+
+    .coin {
+
+      position: absolute;
+
+      width: 40px;
+
+      height: 40px;
+
+      background-image: url('https://cdn-icons-png.flaticon.com/512/2646/2646575.png');
+
+      background-size: cover;
+
+      animation: fall linear infinite;
+
+    }
+
+
+
+    @keyframes fall {
+
+      0% {
+
+        transform: translateY(-50px) rotate(0deg);
+
+        opacity: 1;
+
+      }
+
+      100% {
+
+        transform: translateY(110vh) rotate(360deg);
+
+        opacity: 0;
+
+      }
+
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+
+
+  <div class="logo">
+
+    <img src="https://upload.wikimedia.org/wikipedia/it/2/2e/Gratta_e_vinci_logo.png" alt="Gratta e Vinci">
+
+  </div>
+
+
+
+  <div class="emoji">🤑</div>
+
+
+
+  <div class="hai-vinto">HAI VINTO!</div>
+
+
+
+  <div class="info">500 Euro</div>
+
+  <div class="info">Doppia Sfida Super<br>numero biglietto 014<br>codice biglietto: 33163846960014</div>
+
+  <div class="info" style="font-weight: bold;">CONGRATULAZIONI! HAI VINTO</div>
+
+
+
+  <a href="#" class="button">
+
+    Controlla un nuovo biglietto
+
+    <img src="https://cdn-icons-png.flaticon.com/512/685/685655.png" alt="camera">
+
+  </a>
+
+
+
+  <!-- Monete animate -->
+
+  <script>
+
+    function createCoin() {
+
+      const coin = document.createElement("div");
+
+      coin.classList.add("coin");
+
+      coin.style.left = Math.random() * window.innerWidth + "px";
+
+      coin.style.animationDuration = (2 + Math.random() * 3) + "s";
+
+      document.body.appendChild(coin);
+
+
+
+      setTimeout(() => {
+
+        coin.remove();
+
+      }, 5000);
+
+    }
+
+
+
+    setInterval(createCoin, 200); // Frequenza della pioggia
+
+  </script>
+
+
+
+</body>
+
+</html>
